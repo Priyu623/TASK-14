@@ -1,9 +1,8 @@
 # ANSIBLE_DOCKER_SSH
 
+✍TASK DESCRIPTION :
 
-🔰 14.2 Further in ARTH -
+⚡ Create An Ansible Playbook that will Retrieve New Container IP and Update the Inventory. 
 
-Task 10 We have to create an Ansible playbook that will retrieve newContainer IP and update the inventory.
-
-So that further Configuration of Webserver could be done inside that Container.
+⚡So further Configuration of Webserver could be done inside that Container .
 
