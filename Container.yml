@@ -1,0 +1,22 @@
+ - name: TO LAUNCH THE CONTAINER
+    docker_container:
+      name: "{{ c_name }}"
+      image: ssh:v1
+      state: started
+      interactive: yes
+      tty: yes
+      ports:
+      - "{{ web_port }}:80"
+      - "{{ ssh_port }}:22"
+    register: x
+
+  - name: FOR DEBUGGING
+    debug:
+      var: x.container.NetworkSettings.IPAddress
+
+  - name: TO UPDATE THE INVENTORY FILE
+    blockinfile:
+      path: /root/ip.txt
+      block: |
+             [docker]
+             {{ x['container']['NetworkSettings']['IPAddress'] }} ansible_ssh_user=root ansible_ssh_pass=docker  ansible_connection=ssh
