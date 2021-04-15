@@ -1,0 +1,16 @@
+- hosts: docker
+  tasks:
+
+  - name: TO INSTALL THE WEBSERVER
+    package:
+      name: httpd
+      state: present
+
+  - name: TO CONFIGURE THE WEBPAGES
+    copy:
+      content: "FINALLY I HAVE SUCCESSFULLY COMPLETED MY TASK 14.2"
+      dest: /var/www/html/index.html
+
+  - name: TO START THE SERVICES
+    command: "/usr/sbin/httpd"
+
